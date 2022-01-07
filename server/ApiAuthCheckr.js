@@ -9,6 +9,10 @@ module.exports = function(req, res, next) {
 	//let stokentype = req.headers['Authorization'];
 	console.log('stokentypesss : ');
 	console.log(req.headers.authorization);
+	let buff = Buffer.from(req.headers.authorization, 'base64');
+	let text = buff.toString('utf-8');
+	console.log('DEccoooodeddd : ');
+	console.log(text);
 	next();
   	// if(stokentype) {
 	// 	console.log('Public Stoke Route type : ' + stokentype);
