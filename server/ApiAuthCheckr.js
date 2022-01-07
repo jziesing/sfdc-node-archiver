@@ -19,6 +19,7 @@ module.exports = function(req, res, next) {
 		console.log('ACCESS GRANTED ');
 		next();
 	} else {
+		console.log('INVALID CREDS :: ACCESS DENIED ');
 		res.status(404).end();
 	}
 };
