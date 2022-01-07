@@ -23,9 +23,9 @@ class MethodHelper {
     ArchiveCase(reqBodyForm) {
 		console.log('reqBodyForm');
 		console.log(reqBodyForm);
-		let caseToAdd = JSON.parse(reqBodyForm);
+		//let caseToAdd = JSON.parse(reqBodyForm);
 		console.log('PARSED reqBodyForm');
-		console.log(caseToAdd);
+		console.log(typeof reqBodyForm);
         return new Promise((resolve, reject) => {
             console.log(reqBodyForm);
             resolve(200);
