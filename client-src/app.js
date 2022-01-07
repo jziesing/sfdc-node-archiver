@@ -3,14 +3,16 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Link
+  Link,
+  useLocation
 } from 'react-router-dom';
 import Home from './home';
 import Demovid from './demovid';
 
-function NavBarMarkup(props) {
-	console.log(props);
-	console.log(props.currpath);
+function NavBarMarkup() {
+	let location = useLocation();
+	console.log(location.pathname);
+	console.log("location!!!");
   return (
 	  <header>
 		<div class="slds-context-bar">
@@ -42,7 +44,7 @@ function NavBarMarkup(props) {
 const App = () => (
   <Router>
     <div>
-      <NavBarMarkup currpath={this.props.location.pathname} />
+      <NavBarMarkup />
       <main>
         <Switch>
           <Route exact path="/" component={Home} />
