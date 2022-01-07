@@ -22,8 +22,6 @@ const Home = () => (
 		  			</div>
 		  			<div class="slds-card__body slds-card__body_inner">
 						<div class="slds-text-longform">
-  							<p>The quick brown fox jumps over the lazy dog.</p>
-  							<p>The quick brown fox jumps over the lazy dog.</p>
   							<h3 class="slds-text-heading_small">This demo uses Heroku Connect, Salesforce Connect, and a small bit of custom code to archive Salesforce data on Heroku Postgres!</h3>
 							<p>It then uses Salesforce Connect and OData to read the archived data in Salesforce without taking up storage space.</p>
 							<h3>Follow the steps in the slideshow below to setup this demo for yourself, or view a recording of this demo below.</h3>
