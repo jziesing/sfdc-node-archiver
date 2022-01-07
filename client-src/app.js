@@ -8,12 +8,11 @@ import {
 import Home from './home';
 import Demovid from './demovid';
 
-const App = () => (
-  <Router>
-    <div>
-      <header>
-
-
+function NavBarMarkup(props) {
+	console.log(props);
+	console.log(props.currpath);
+  return (
+	  <header>
 		<div class="slds-context-bar">
 		  <div class="slds-context-bar__primary">
 		    <div class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger_click slds-no-hover">
@@ -36,6 +35,14 @@ const App = () => (
 		  </nav>
 		</div>
       </header>
+
+  );
+}
+
+const App = () => (
+  <Router>
+    <div>
+      <NavBarMarkup currpath={this.props.location.pathname} />
       <main>
         <Switch>
           <Route exact path="/" component={Home} />
