@@ -27,7 +27,7 @@ const Home = () => (
 						<h3>Follow the steps in the slideshow below to setup this demo for yourself, or view a recording of this demo below.</h3>
 					</div>
 		  			<footer class="slds-card__footer">
-		  				<p>INSERT VIDEO DEMO HERE</p>
+		  				<p>Heroku Architects</p>
 		  			</footer>
 		  		</article>
 		  </div>
