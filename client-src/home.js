@@ -3,9 +3,7 @@ import React from 'react';
 const Home = () => (
   	<div>
 	  <div class="slds-grid slds-wrap">
-		  <div class="slds-col slds-size_2-of-12">
-			  <span>1</span>
-		  </div>
+		  <div class="slds-col slds-size_2-of-12"></div>
 		  <div class="slds-col slds-size_8-of-12">
 			    <article class="slds-card">
 		  			<div class="slds-card__header slds-grid">
@@ -33,9 +31,7 @@ const Home = () => (
 		  			</footer>
 		  		</article>
 		  </div>
-		  <div class="slds-col slds-size_2-of-12">
-			  <span>3</span>
-		  </div>
+		  <div class="slds-col slds-size_2-of-12"></div>
 	  </div>
 	</div>
 );
