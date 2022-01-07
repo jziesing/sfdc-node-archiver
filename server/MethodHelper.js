@@ -11,14 +11,8 @@ class MethodHelper {
 		// methods
         this.ArchiveCase = this.ArchiveCase.bind(this);
     }
-    /*  @route: /api/pb/cli/signup
+    /*  @route: /api/archive/case/signup
      *     - POST
-     *   input = { username: '', email: '', firstname: '', lastname: ''  }
-     *   output = Promise:
-     *              - resolve --> returns status 200, users signed up and confirmation email is sent
-     *              - reject:
-     *                   - status 500 = error, try again later or try different email
-     *                   - status 409 = email or username already exists
      */
     ArchiveCase(reqBodyForm) {
 		// build query string
