@@ -189,9 +189,28 @@ class MethodHelper {
 		console.log('qryyy strrr');
 		console.log(qrystr);
 
+        let currclient = new Client({
+            connectionString: process.env.DATABASE_URL,
+            ssl: {
+                rejectUnauthorized: false
+              }
+        });
+
         return new Promise((resolve, reject) => {
-            console.log(reqBodyForm);
-            resolve(200);
+            currclient.connect();
+
+            console.log('is connectED');
+
+            currclient.query(qrystr, (err, resp) => {
+                if (err){
+                    console.log('is ERROR');
+                    console.log(err);
+                    reject(400);
+                }
+                console.log(resp);
+                currclient.end();
+                resolve(200);
+            });
         });
     }
     /*  @route: /api/pb/cli/login
