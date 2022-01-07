@@ -21,12 +21,6 @@ class MethodHelper {
      *                   - status 409 = email or username already exists
      */
     ArchiveCase(reqBodyForm) {
-		console.log('reqBodyForm');
-		//console.log(reqBodyForm);
-		//let caseToAdd = JSON.parse(reqBodyForm);
-		console.log('PARSED reqBodyForm');
-		console.log(typeof reqBodyForm);
-
 		// build query string
 		let qrystr = "INSERT INTO sfdc_archive.archived_cases(";
 
@@ -104,10 +98,6 @@ class MethodHelper {
 		}
 
 		qrystr = qrystr.substring(0, qrystr.length - 2);
-
-		console.log('qryyy strrr');
-		console.log(qrystr);
-
 		qrystr = qrystr + ")VALUES(";
 
 		if(typeof reqBodyForm.Id != "undefined" && reqBodyForm.Id != "" && reqBodyForm.Id != null) {
@@ -213,27 +203,6 @@ class MethodHelper {
             });
         });
     }
-    /*  @route: /api/pb/cli/login
-     *     - POST
-     *   input = { username: '', password: '' }
-     *   output = Promise:
-     *              - resolve --> returns sid
-     *              - reject --> status 500, error
-     */
-    // Login(reqBodyForm) {
-	//
-    //     return new Promise((resolve, reject) => {
-    //         console.log(reqBodyForm);
-    //         if(typeof(reqBodyForm.username) == 'string' && reqBodyForm.username.length > 3 &&
-    //            typeof(reqBodyForm.password) == 'string' && reqBodyForm.password.length > 6) {
-	//
-    //                 resolve(200);
-    //         } else {
-    //             console.log('did not meet if check');
-    //             reject(500);
-    //         }
-    //     });
-    // }
 }
 
 module.exports = MethodHelper;

@@ -13,8 +13,6 @@ let express = require('express'),
  */
 ApiRouter.post("/api/archive/case/", ApiMethodsRouter.ArchiveCase);
 
-
-
 /*
  * export
  */
