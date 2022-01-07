@@ -11,7 +11,7 @@ const Demovid = () => (
 		  					<div class="slds-media__body">
 		  						<h2 class="slds-card__header-title">
 		  							<a href="#" class="slds-card__header-link slds-truncate" title="Accounts">
-		  								<span>ADD DEMO VIDEO!</span>
+		  								<span>How to Archive Salesforce Data with Heroku</span>
 		  							</a>
 		  						</h2>
 		  					</div>
