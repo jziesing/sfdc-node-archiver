@@ -8,7 +8,7 @@ module.exports = function(req, res, next) {
 	// protected routes
 	//let stokentype = req.headers['Authorization'];
 	console.log('stokentypesss : ');
-	console.log(req.headers);
+	console.log(req.headers.authorization);
 	next();
   	// if(stokentype) {
 	// 	console.log('Public Stoke Route type : ' + stokentype);
