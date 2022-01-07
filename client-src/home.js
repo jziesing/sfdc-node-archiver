@@ -16,7 +16,7 @@ const Home = () => (
 		  						</h2>
 		  					</div>
 		  					<div class="slds-no-flex">
-		  						<span><i>DEMO</i></span>
+		  						<span><i>INSTRUCTIONS</i></span>
 		  					</div>
 		  				</header>
 		  			</div>
