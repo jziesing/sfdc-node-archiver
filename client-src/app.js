@@ -75,8 +75,8 @@ const App = () => (
       <NavBarMarkup />
       <main>
         <Switch>
-          <Route exact path="/" component={Home} />
-		  <Route exact path="/demo" component={Demovid} />
+          <Route exact path="/" component={Demovid} />
+		  <Route exact path="/instructions" component={Home} />
         </Switch>
       </main>
     </div>
