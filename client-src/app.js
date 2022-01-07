@@ -12,10 +12,27 @@ const App = () => (
   <Router>
     <div>
       <header>
-        <Link to="/">Home</Link>
-        {' '}
-        <Link to="/demo">Demo Video</Link>
-        {' '}
+		<div class="slds-context-bar">
+		  <div class="slds-context-bar__primary">
+		    <div class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger_click slds-no-hover">
+		      <span class="slds-context-bar__label-action slds-context-bar__app-name">
+		        <span class="slds-truncate" title="App Name">Archive Demo</span>
+		      </span>
+		    </div>
+		  </div>
+		  <nav class="slds-context-bar__secondary" role="navigation">
+		    <ul class="slds-grid">
+		      <li class="slds-context-bar__item slds-is-active">
+				<Link to="/">Instructions</Link>
+		        {' '}
+		      </li>
+		      <li class="slds-context-bar__item">
+				<Link to="/demo">Demo Video</Link>
+  		        {' '}
+		      </li>
+		    </ul>
+		  </nav>
+		</div>
       </header>
       <main>
         <Switch>
