@@ -13,32 +13,60 @@ function NavBarMarkup() {
 	let location = useLocation();
 	console.log(location.pathname);
 	console.log("location!!!");
-  return (
-	  <header>
-		<div class="slds-context-bar">
-		  <div class="slds-context-bar__primary">
-		    <div class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger_click slds-no-hover">
-		      <span class="slds-context-bar__label-action slds-context-bar__app-name">
-		        <span class="slds-truncate" title="App Name">Archive Demo</span>
-		      </span>
-		    </div>
-		  </div>
-		  <nav class="slds-context-bar__secondary" role="navigation">
-		    <ul class="slds-grid">
-		      <li class="slds-context-bar__item slds-is-active">
-				  <Link to="/" className="slds-context-bar__label-action"><span class="slds-truncate" title="Instructions">Instructions</span></Link>
-		          {' '}
-		      </li>
-		      <li class="slds-context-bar__item">
-				  <Link to="/demo" className="slds-context-bar__label-action"><span class="slds-truncate" title="Menu Item">Demo Video</span></Link>
-		          {' '}
-		      </li>
-		    </ul>
-		  </nav>
-		</div>
-      </header>
+	if(location.pathname == '/demo') {
+		return (
+	  	  <header>
+	  		<div class="slds-context-bar">
+	  		  <div class="slds-context-bar__primary">
+	  		    <div class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger_click slds-no-hover">
+	  		      <span class="slds-context-bar__label-action slds-context-bar__app-name">
+	  		        <span class="slds-truncate" title="App Name">Archive Demo</span>
+	  		      </span>
+	  		    </div>
+	  		  </div>
+	  		  <nav class="slds-context-bar__secondary" role="navigation">
+	  		    <ul class="slds-grid">
+	  		      <li class="slds-context-bar__item">
+	  				  <Link to="/" className="slds-context-bar__label-action"><span class="slds-truncate" title="Instructions">Instructions</span></Link>
+	  		          {' '}
+	  		      </li>
+	  		      <li class="slds-context-bar__item slds-is-active">
+	  				  <Link to="/demo" className="slds-context-bar__label-action"><span class="slds-truncate" title="Menu Item">Demo Video</span></Link>
+	  		          {' '}
+	  		      </li>
+	  		    </ul>
+	  		  </nav>
+	  		</div>
+	        </header>
+	    );
+	} else {
+		return (
+	  	  <header>
+	  		<div class="slds-context-bar">
+	  		  <div class="slds-context-bar__primary">
+	  		    <div class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger_click slds-no-hover">
+	  		      <span class="slds-context-bar__label-action slds-context-bar__app-name">
+	  		        <span class="slds-truncate" title="App Name">Archive Demo</span>
+	  		      </span>
+	  		    </div>
+	  		  </div>
+	  		  <nav class="slds-context-bar__secondary" role="navigation">
+	  		    <ul class="slds-grid">
+	  		      <li class="slds-context-bar__item slds-is-active">
+	  				  <Link to="/" className="slds-context-bar__label-action"><span class="slds-truncate" title="Instructions">Instructions</span></Link>
+	  		          {' '}
+	  		      </li>
+	  		      <li class="slds-context-bar__item">
+	  				  <Link to="/demo" className="slds-context-bar__label-action"><span class="slds-truncate" title="Menu Item">Demo Video</span></Link>
+	  		          {' '}
+	  		      </li>
+	  		    </ul>
+	  		  </nav>
+	  		</div>
+	        </header>
+	    );
+	}
 
-  );
 }
 
 const App = () => (
