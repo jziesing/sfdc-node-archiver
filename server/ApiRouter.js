@@ -11,7 +11,7 @@ let express = require('express'),
 /*
  *  api routes
  */
-ApiRouter.post("/api/archive/case/:caseid", ApiMethodsRouter.ArchiveCase);
+ApiRouter.post("/api/archive/case/", ApiMethodsRouter.ArchiveCase);
 
 
 
