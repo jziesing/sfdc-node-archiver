@@ -13,7 +13,7 @@ function NavBarMarkup() {
 	let location = useLocation();
 	console.log(location.pathname);
 	console.log("location!!!");
-	if(location.pathname == '/demo') {
+	if(location.pathname == '/instructions') {
 		return (
 	  	  <header>
 	  		<div class="slds-context-bar">
@@ -27,13 +27,13 @@ function NavBarMarkup() {
 	  		  <nav class="slds-context-bar__secondary" role="navigation">
 	  		    <ul class="slds-grid">
 	  		      <li class="slds-context-bar__item">
-	  				  <Link to="/" className="slds-context-bar__label-action"><span class="slds-truncate" title="Instructions">Instructions</span></Link>
+	  				  <Link to="/" className="slds-context-bar__label-action"><span class="slds-truncate" title="Menu Item">Demo Video</span></Link>
 	  		          {' '}
 	  		      </li>
-	  		      <li class="slds-context-bar__item slds-is-active">
-	  				  <Link to="/demo" className="slds-context-bar__label-action"><span class="slds-truncate" title="Menu Item">Demo Video</span></Link>
-	  		          {' '}
-	  		      </li>
+  	  		      <li class="slds-context-bar__item slds-is-active">
+  	  				  <Link to="/instructions" className="slds-context-bar__label-action"><span class="slds-truncate" title="Instructions">Instructions</span></Link>
+  	  		          {' '}
+  	  		      </li>
 	  		    </ul>
 	  		  </nav>
 	  		</div>
@@ -51,16 +51,16 @@ function NavBarMarkup() {
 	  		    </div>
 	  		  </div>
 	  		  <nav class="slds-context-bar__secondary" role="navigation">
-	  		    <ul class="slds-grid">
-	  		      <li class="slds-context-bar__item slds-is-active">
-	  				  <Link to="/" className="slds-context-bar__label-action"><span class="slds-truncate" title="Instructions">Instructions</span></Link>
-	  		          {' '}
-	  		      </li>
-	  		      <li class="slds-context-bar__item">
-	  				  <Link to="/demo" className="slds-context-bar__label-action"><span class="slds-truncate" title="Menu Item">Demo Video</span></Link>
-	  		          {' '}
-	  		      </li>
-	  		    </ul>
+				<ul class="slds-grid">
+  	  		      <li class="slds-context-bar__item slds-is-active">
+  	  				  <Link to="/" className="slds-context-bar__label-action"><span class="slds-truncate" title="Menu Item">Demo Video</span></Link>
+  	  		          {' '}
+  	  		      </li>
+    	  		      <li class="slds-context-bar__item">
+    	  				  <Link to="/instructions" className="slds-context-bar__label-action"><span class="slds-truncate" title="Instructions">Instructions</span></Link>
+    	  		          {' '}
+    	  		      </li>
+  	  		    </ul>
 	  		  </nav>
 	  		</div>
 	        </header>
