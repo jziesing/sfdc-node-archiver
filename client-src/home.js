@@ -21,10 +21,13 @@ const Home = () => (
 		  				</header>
 		  			</div>
 		  			<div class="slds-card__body slds-card__body_inner">
-						<p>This demo uses Heroku Connect, Salesforce Connect, and a small bit of custom code to archive salesforce data on Heroku Postgres, but still have read access to it using Salesforce Connect.</p>
-	  			      	<p>There is custom code running on Heroku that is a small API that takes authenicated requests to archive a Salesforce Case.  When it archives a case, it simple creates a copy of the case in a table that is not mapped with Heroku Connect.</p>
-	  			      	<p>There is also custom code running on Salesforce that is a trigger whenever a Case record is deleted.  When Case's are deleted, an archived copy is stored in Heroku Postgres that is viewable in Salesforce using OData and Salesforce Connect, but doesn't eat at Salesforce storage limits.</p>
-						<h3>Follow the steps in the slideshow below to setup this demo for yourself, or view a recording of this demo below.</h3>
+						<div class="slds-text-longform">
+  							<p>The quick brown fox jumps over the lazy dog.</p>
+  							<p>The quick brown fox jumps over the lazy dog.</p>
+  							<h3 class="slds-text-heading_small">This demo uses Heroku Connect, Salesforce Connect, and a small bit of custom code to archive Salesforce data on Heroku Postgres!</h3>
+							<p>It then uses Salesforce Connect and OData to read the archived data in Salesforce without taking up storage space.</p>
+							<h3>Follow the steps in the slideshow below to setup this demo for yourself, or view a recording of this demo below.</h3>
+						</div>
 					</div>
 		  			<footer class="slds-card__footer">
 		  				<p>Heroku Architects</p>
