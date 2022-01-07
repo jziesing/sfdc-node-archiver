@@ -6,6 +6,7 @@ import {
   Link
 } from 'react-router-dom';
 import Home from './home';
+import Demovid from './demovid';
 
 const App = () => (
   <Router>
@@ -13,10 +14,13 @@ const App = () => (
       <header>
         <Link to="/">Home</Link>
         {' '}
+        <Link to="/demo">Demo Video</Link>
+        {' '}
       </header>
       <main>
         <Switch>
           <Route exact path="/" component={Home} />
+		  <Route exact path="/demo" component={Demovid} />
         </Switch>
       </main>
     </div>
