@@ -12,6 +12,8 @@ const App = () => (
   <Router>
     <div>
       <header>
+
+
 		<div class="slds-context-bar">
 		  <div class="slds-context-bar__primary">
 		    <div class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger_click slds-no-hover">
@@ -23,12 +25,12 @@ const App = () => (
 		  <nav class="slds-context-bar__secondary" role="navigation">
 		    <ul class="slds-grid">
 		      <li class="slds-context-bar__item slds-is-active">
-				<Link to="/">Instructions</Link>
-		        {' '}
+				  <Link to="/" className="slds-context-bar__label-action"><span class="slds-truncate" title="Instructions">Instructions</span></Link>
+		          {' '}
 		      </li>
 		      <li class="slds-context-bar__item">
-				<Link to="/demo">Demo Video</Link>
-  		        {' '}
+				  <Link to="/demo" className="slds-context-bar__label-action"><span class="slds-truncate" title="Menu Item">Demo Video</span></Link>
+		          {' '}
 		      </li>
 		    </ul>
 		  </nav>
