@@ -18,6 +18,9 @@ let port = process.env.PORT || 3000;
 
 app.use("/api/*", ApiAuthCheckr);
 
+
+app.use(bodyParser.json());
+
 app.use(apiRouter);
 
 
