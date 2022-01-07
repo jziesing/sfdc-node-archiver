@@ -19,6 +19,7 @@ class ApiMethods {
         res.setHeader('Content-Type', 'application/json');
 		console.log('req.body');
 		console.log(req.body);
+		console.log('TIME TO DO SOME DBBBB WORK');
         this.mHelper.ArchiveCase(req.body)
                   .then(result => {
                         res.sendStatus(200);
