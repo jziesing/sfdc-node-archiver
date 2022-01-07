@@ -2,11 +2,11 @@ import React from 'react';
 
 const Home = () => (
   	<div>
-	  <div class="slds-grid slds-gutters">
-		  <div class="slds-col">
+	  <div class="slds-grid slds-wrap">
+		  <div class="slds-col slds-size_2-of-12">
 			  <span>1</span>
 		  </div>
-		  <div class="slds-col">
+		  <div class="slds-col slds-size_8-of-12">
 			  <h1>Home</h1>
 				  <p>This demo uses Heroku Connect, Salesforce Connect, and a small bit of custom code to archive salesforce data on Heroku Postgres, but still have read access to it using Salesforce Connect.</p>
 			      <p>There is custom code running on Heroku that is a small API that takes authenicated requests to archive a Salesforce Case.  When it archives a case, it simple creates a copy of the case in a table that is not mapped with Heroku Connect.</p>
@@ -39,7 +39,7 @@ const Home = () => (
 		  			</footer>
 		  		</article>
 		  </div>
-		  <div class="slds-col">
+		  <div class="slds-col slds-size_2-of-12">
 			  <span>3</span>
 		  </div>
 	  </div>
