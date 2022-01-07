@@ -108,79 +108,79 @@ class MethodHelper {
 		console.log('qryyy strrr');
 		console.log(qrystr);
 
-		qrystr = qrystr + ") VALUES(";
+		qrystr = qrystr + ")VALUES(";
 
 		if(typeof reqBodyForm.Id != "undefined" && reqBodyForm.Id != "" && reqBodyForm.Id != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.Id + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.Id + "\', ";
 		}
 		if(typeof reqBodyForm.ContactEmail != "undefined" && reqBodyForm.ContactEmail != "" && reqBodyForm.ContactEmail != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.ContactEmail + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.ContactEmail + "\', ";
 		}
 		if(typeof reqBodyForm.CreatedDate != "undefined" && reqBodyForm.CreatedDate != "" && reqBodyForm.CreatedDate != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.CreatedDate + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.CreatedDate + "\', ";
 		}
 		if(typeof reqBodyForm.SLAViolation__c != "undefined" && reqBodyForm.SLAViolation__c != "" && reqBodyForm.SLAViolation__c != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.SLAViolation__c + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.SLAViolation__c + "\', ";
 		}
 		if(typeof reqBodyForm.IsEscalated != "undefined" && reqBodyForm.IsEscalated != "" && reqBodyForm.IsEscalated != null) {
 			qrystr = qrystr + reqBodyForm.IsEscalated + ", ";
 		}
 		if(typeof reqBodyForm.Type != "undefined" && reqBodyForm.Type != "" && reqBodyForm.Type != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.Type + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.Type + "\', ";
 		}
 		if(typeof reqBodyForm.SystemModstamp != "undefined" && reqBodyForm.SystemModstamp != "" && reqBodyForm.SystemModstamp != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.SystemModstamp + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.SystemModstamp + "\', ";
 		}
 		if(typeof reqBodyForm.Subject != "undefined" && reqBodyForm.Subject != "" && reqBodyForm.Subject != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.Subject + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.Subject + "\', ";
 		}
 		if(typeof reqBodyForm.Priority != "undefined" && reqBodyForm.Priority != "" && reqBodyForm.Priority != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.Priority + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.Priority + "\', ";
 		}
 		if(typeof reqBodyForm.ContactMobile != "undefined" && reqBodyForm.ContactMobile != "" && reqBodyForm.ContactMobile != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.ContactMobile + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.ContactMobile + "\', ";
 		}
 		if(typeof reqBodyForm.Status != "undefined" && reqBodyForm.Status != "" && reqBodyForm.Status != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.Status + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.Status + "\', ";
 		}
 		if(typeof reqBodyForm.Product__c != "undefined" && reqBodyForm.Product__c != "" && reqBodyForm.Product__c != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.Product__c + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.Product__c + "\', ";
 		}
 		if(typeof reqBodyForm.CaseNumber != "undefined" && reqBodyForm.CaseNumber != "" && reqBodyForm.CaseNumber != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.CaseNumber + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.CaseNumber + "\', ";
 		}
 		if(typeof reqBodyForm.OwnerId != "undefined" && reqBodyForm.OwnerId != "" && reqBodyForm.OwnerId != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.OwnerId + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.OwnerId + "\', ";
 		}
 		if(typeof reqBodyForm.CreatedById != "undefined" && reqBodyForm.CreatedById != "" && reqBodyForm.CreatedById != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.CreatedById + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.CreatedById + "\', ";
 		}
 		if(typeof reqBodyForm.ContactPhone != "undefined" && reqBodyForm.ContactPhone != "" && reqBodyForm.ContactPhone != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.ContactPhone + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.ContactPhone + "\', ";
 		}
 		if(typeof reqBodyForm.Reason != "undefined" && reqBodyForm.Reason != "" && reqBodyForm.Reason != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.Reason + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.Reason + "\', ";
 		}
 		if(typeof reqBodyForm.IsClosed != "undefined" && reqBodyForm.IsClosed != "" && reqBodyForm.IsClosed != null) {
 			qrystr = qrystr + reqBodyForm.IsClosed + ", ";
 		}
 		if(typeof reqBodyForm.ContactId != "undefined" && reqBodyForm.ContactId != "" && reqBodyForm.ContactId != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.ContactId + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.ContactId + "\', ";
 		}
 		if(typeof reqBodyForm.AccountId != "undefined" && reqBodyForm.AccountId != "" && reqBodyForm.AccountId != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.AccountId + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.AccountId + "\', ";
 		}
 		if(typeof reqBodyForm.LastModifiedDate != "undefined" && reqBodyForm.LastModifiedDate != "" && reqBodyForm.LastModifiedDate != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.LastModifiedDate + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.LastModifiedDate + "\', ";
 		}
 		if(typeof reqBodyForm.Origin != "undefined" && reqBodyForm.Origin != "" && reqBodyForm.Origin != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.Origin + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.Origin + "\', ";
 		}
 		if(typeof reqBodyForm.Description != "undefined" && reqBodyForm.Description != "" && reqBodyForm.Description != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.Description + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.Description + "\', ";
 		}
 		if(typeof reqBodyForm.Comments != "undefined" && reqBodyForm.Comments != "" && reqBodyForm.Comments != null) {
-			qrystr = qrystr + "\"" + reqBodyForm.Comments + "\", ";
+			qrystr = qrystr + "\'" + reqBodyForm.Comments + "\', ";
 		}
 
 		qrystr = qrystr.substring(0, qrystr.length - 2);
