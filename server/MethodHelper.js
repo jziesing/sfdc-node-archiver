@@ -16,7 +16,7 @@ class MethodHelper {
      */
     ArchiveCase(reqBodyForm) {
 		// build query string
-		let qrystr = "INSERT INTO sfdc_archive.archived_cases(";
+		let qrystr = "INSERT INTO sfdc_archive.archived_cases(record_type, ";
 
 		if(typeof reqBodyForm.Id != "undefined" && reqBodyForm.Id != "" && reqBodyForm.Id != null) {
 			qrystr = qrystr + "sfid, ";
@@ -92,7 +92,7 @@ class MethodHelper {
 		}
 
 		qrystr = qrystr.substring(0, qrystr.length - 2);
-		qrystr = qrystr + ")VALUES(";
+		qrystr = qrystr + ")VALUES(\'archive'\, ";
 
 		if(typeof reqBodyForm.Id != "undefined" && reqBodyForm.Id != "" && reqBodyForm.Id != null) {
 			qrystr = qrystr + "\'" + reqBodyForm.Id + "\', ";
