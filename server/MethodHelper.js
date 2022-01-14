@@ -90,6 +90,9 @@ class MethodHelper {
 		if(typeof reqBodyForm.Comments != "undefined" && reqBodyForm.Comments != "" && reqBodyForm.Comments != null) {
 			qrystr = qrystr + "comments, ";
 		}
+		if(rec_type == 'backup') {
+			qrystr = qrystr + "active_case, ";
+		}
 
 		qrystr = qrystr.substring(0, qrystr.length - 2);
 		qrystr = qrystr + ")VALUES(\'"+ rec_type + "'\, ";
@@ -165,6 +168,9 @@ class MethodHelper {
 		}
 		if(typeof reqBodyForm.Comments != "undefined" && reqBodyForm.Comments != "" && reqBodyForm.Comments != null) {
 			qrystr = qrystr + "\'" + reqBodyForm.Comments + "\', ";
+		}
+		if(rec_type == 'backup') {
+			qrystr = qrystr + "\'" + reqBodyForm.Id + "\', ";
 		}
 
 		qrystr = qrystr.substring(0, qrystr.length - 2);
