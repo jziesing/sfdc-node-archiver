@@ -19,7 +19,7 @@ class ApiMethods {
     ArchiveCase(req, res) {
         res.setHeader('Content-Type', 'application/json');
 		console.log('TIME TO ArchiveCase');
-        this.mHelper.ArchiveCase(req.body)
+        this.mHelper.ArchiveOrBackupCase(req.body, 'archive')
                   .then(result => {
                         res.sendStatus(200);
                   }).catch(err => {
@@ -35,7 +35,7 @@ class ApiMethods {
     BackupCase(req, res) {
         res.setHeader('Content-Type', 'application/json');
 		console.log('TIME TO BackupCase');
-        this.mHelper.BackupCase(req.body)
+        this.mHelper.ArchiveOrBackupCase(req.body, 'backup')
                   .then(result => {
                         res.sendStatus(200);
                   }).catch(err => {

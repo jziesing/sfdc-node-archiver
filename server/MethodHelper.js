@@ -9,13 +9,12 @@ class MethodHelper {
 
     constructor() {
 		// methods
-        this.ArchiveCase = this.ArchiveCase.bind(this);
-        this.ArchiveCase = this.ArchiveCase.bind(this);
+        this.ArchiveOrBackupCase = this.ArchiveOrBackupCase.bind(this);
     }
     /*  @route: /api/archive/case/signup
      *     - POST
      */
-    ArchiveCase(reqBodyForm) {
+    ArchiveOrBackupCase(reqBodyForm, rec_type) {
 		// build query string
 		let qrystr = "INSERT INTO sfdc_archive.archived_cases(record_type, ";
 
@@ -93,7 +92,7 @@ class MethodHelper {
 		}
 
 		qrystr = qrystr.substring(0, qrystr.length - 2);
-		qrystr = qrystr + ")VALUES(\'archive'\, ";
+		qrystr = qrystr + ")VALUES(\'"+ rec_type + "'\, ";
 
 		if(typeof reqBodyForm.Id != "undefined" && reqBodyForm.Id != "" && reqBodyForm.Id != null) {
 			qrystr = qrystr + "\'" + reqBodyForm.Id + "\', ";
