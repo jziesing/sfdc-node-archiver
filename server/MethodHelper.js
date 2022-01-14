@@ -10,6 +10,7 @@ class MethodHelper {
     constructor() {
 		// methods
         this.ArchiveCase = this.ArchiveCase.bind(this);
+        this.ArchiveCase = this.ArchiveCase.bind(this);
     }
     /*  @route: /api/archive/case/signup
      *     - POST
