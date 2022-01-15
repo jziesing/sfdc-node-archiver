@@ -248,18 +248,44 @@ class MethodHelper {
 				qrystr22 = qrystr22 + ")VALUES(";
 				for (const property in archdCase) {
   					console.log(`${property}: ${archdCase[property]}`);
-					qrystr22 = qrystr22 + "\'" + `${archdCase[property]}` + "\', ";
+					if(typeof archdCase[property] != 'number' || typeof archdCase[property] != 'boolean' typeof archdCase[property] != 'null') {
+						qrystr22 = qrystr22 + "\'" + `${archdCase[property]}` + "\', ";
+					} else {
+						qrystr22 = qrystr22 + `${archdCase[property]}` + ", ";
+					}
+
 				}
 
-				qrystr22 = qrystr22.substring(0, qrystr22.length - 2) + ";";
+				qrystr22 = qrystr22.substring(0, qrystr22.length - 2) + ");";
 				console.log('qrystr22');
                 console.log(qrystr22);
 				// INSERT BACK INTO case
+				currclient.query(qrystr22, (errr, respp) => {
+					if (errr){
+	                    console.log('is ERROR');
+	                    console.log(err);
+	                    reject(400);
+	                }
+					console.log('succccesss 222');
+	                console.log(respp);
 
+					let qrystrDel = "DELETE FROM sfdc_archive.archived_cases WHERE id = \'" + pgId + "\';";
+					currclient.query(qrystrDel, (errrr, resppp) => {
+						if (errrr){
+		                    console.log('is ERROR');
+		                    console.log(err);
+		                    reject(400);
+		                }
+						console.log('succccesss 33');
+		                console.log(resppp);
+
+						currclient.end();
+		                resolve(200);
+					});
+				});
 				// DELETE ARCHIVE RECORD
 
-                currclient.end();
-                resolve(200);
+
             });
 			// resolve(200);
         });
