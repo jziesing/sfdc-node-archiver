@@ -209,40 +209,39 @@ class MethodHelper {
      */
     RestoreCase(reqBodyForm) {
 		// build query string
-		let qrystr = "INSERT INTO sfdc_archive.archived_cases(record_type, ";
+
 		console.log('RestoreCase');
 		console.log(reqBodyForm);
 		let pgId = reqBodyForm.ExternalId;
 		console.log(pgId);
-		// qrystr = qrystr.substring(0, qrystr.length - 2);
-		// qrystr = qrystr + ")";
+		let qrystr = "SELECT * FROM sfdc_archive.archived_cases WHERE id = \'" + pgId + "\';";
+
+		console.log(qrystr);
 		//
-		// console.log('qryyy strrr');
-		// console.log(qrystr);
-		//
-        // let currclient = new Client({
-        //     connectionString: process.env.DATABASE_URL,
-        //     ssl: {
-        //         rejectUnauthorized: false
-        //       }
-        // });
+        let currclient = new Client({
+            connectionString: process.env.DATABASE_URL,
+            ssl: {
+                rejectUnauthorized: false
+              }
+        });
 		//
         return new Promise((resolve, reject) => {
-            // currclient.connect();
-			//
-            // console.log('is connectED');
-			//
-            // currclient.query(qrystr, (err, resp) => {
-            //     if (err){
-            //         console.log('is ERROR');
-            //         console.log(err);
-            //         reject(400);
-            //     }
-            //     console.log(resp);
-            //     currclient.end();
-            //     resolve(200);
-            // });
-			resolve(200);
+            currclient.connect();
+
+            console.log('is connectED');
+
+            currclient.query(qrystr, (err, resp) => {
+                if (err){
+                    console.log('is ERROR');
+                    console.log(err);
+                    reject(400);
+                }
+				console.log('succccesss');
+                console.log(resp);
+                currclient.end();
+                resolve(200);
+            });
+			// resolve(200);
         });
     }
 }
