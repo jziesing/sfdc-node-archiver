@@ -212,6 +212,8 @@ class MethodHelper {
 		let qrystr = "INSERT INTO sfdc_archive.archived_cases(record_type, ";
 		console.log('RestoreCase');
 		console.log(reqBodyForm);
+		let pgId = reqBodyForm.ExternalId;
+		console.log(pgId);
 		// qrystr = qrystr.substring(0, qrystr.length - 2);
 		// qrystr = qrystr + ")";
 		//
