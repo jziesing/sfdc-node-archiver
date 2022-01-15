@@ -241,14 +241,16 @@ class MethodHelper {
 					let archdCase = resp.rows[0];
 					let qrystr22 = "INSERT INTO salesforce.case(";
 					for (const property in archdCase) {
-	  					console.log(`${property}: ${archdCase[property]}`);
-						qrystr22 = qrystr22 + `${property}` + ", ";
+						if(key != 'id' || key != 'sfid' || key != 'record_type') {
+							console.log(`${property}: ${archdCase[property]}`);
+							qrystr22 = qrystr22 + `${property}` + ", ";
+						}
 					}
 					qrystr22 = qrystr22.substring(0, qrystr22.length - 2);
 					qrystr22 = qrystr22 + ")VALUES(";
 					for (let key in archdCase) {
 	  					console.log(`${key}: ${archdCase[key]}`);
-						if(key != 'id' || key != 'sfid') {
+						if(key != 'id' || key != 'sfid' || key != 'record_type') {
 							if(typeof archdCase[key] != 'number' || typeof archdCase[key] != 'boolean' || typeof archdCase[key] != 'null') {
 								qrystr22 = qrystr22 + "\'" + `${archdCase[key]}` + "\', ";
 							} else {
