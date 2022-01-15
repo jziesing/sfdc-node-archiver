@@ -248,12 +248,13 @@ class MethodHelper {
 				qrystr22 = qrystr22 + ")VALUES(";
 				for (let key in archdCase) {
   					console.log(`${key}: ${archdCase[key]}`);
-					if(typeof archdCase[key] != 'number' || typeof archdCase[key] != 'boolean' || typeof archdCase[key] != 'null') {
-						qrystr22 = qrystr22 + "\'" + `${archdCase[key]}` + "\', ";
-					} else {
-						qrystr22 = qrystr22 + `${archdCase[key]}` + ", ";
-					}
-
+					if(key != 'id' || key != 'sfid') {
+						if(typeof archdCase[key] != 'number' || typeof archdCase[key] != 'boolean' || typeof archdCase[key] != 'null') {
+							qrystr22 = qrystr22 + "\'" + `${archdCase[key]}` + "\', ";
+						} else {
+							qrystr22 = qrystr22 + `${archdCase[key]}` + ", ";
+						}
+					} 
 				}
 
 				qrystr22 = qrystr22.substring(0, qrystr22.length - 2) + ");";
