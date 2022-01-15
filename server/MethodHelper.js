@@ -238,16 +238,17 @@ class MethodHelper {
                 }
 				console.log('succccesss');
                 console.log(resp.rows[0]);
+				let archdCase = esp.rows[0];
 				let qrystr22 = "INSERT INTO salesforce.case(";
-				for (const property in resp.rows[0]) {
-  					console.log(`${property}: ${object[property]}`);
+				for (const property in archdCase) {
+  					console.log(`${property}: ${archdCase[property]}`);
 					qrystr22 = qrystr22 + `${property}` + ", ";
 				}
 				qrystr22 = qrystr22.substring(0, qrystr22.length - 2);
 				qrystr22 = qrystr22 + ")VALUES(";
-				for (const property in resp.rows[0]) {
-  					console.log(`${property}: ${object[property]}`);
-					qrystr22 = qrystr22 + "\'" + `${object[property]}` + "\', ";
+				for (const property in archdCase) {
+  					console.log(`${property}: ${archdCase[property]}`);
+					qrystr22 = qrystr22 + "\'" + `${archdCase[property]}` + "\', ";
 				}
 
 				qrystr22 = qrystr22.substring(0, qrystr22.length - 2);
