@@ -240,10 +240,10 @@ class MethodHelper {
 	                console.log(resp.rows[0]);
 					let archdCase = resp.rows[0];
 					let qrystr22 = "INSERT INTO salesforce.case(";
-					for (const property in archdCase) {
+					for (let key in archdCase) {
 						if(key != 'id' || key != 'sfid' || key != 'record_type') {
-							console.log(`${property}: ${archdCase[property]}`);
-							qrystr22 = qrystr22 + `${property}` + ", ";
+							console.log(`${key}: ${archdCase[key]}`);
+							qrystr22 = qrystr22 + `${key}` + ", ";
 						}
 					}
 					qrystr22 = qrystr22.substring(0, qrystr22.length - 2);
