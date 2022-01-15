@@ -237,7 +237,12 @@ class MethodHelper {
                     reject(400);
                 }
 				console.log('succccesss');
-                console.log(resp);
+                console.log(resp.rows[0]);
+
+				// INSERT BACK INTO case
+
+				// DELETE ARCHIVE RECORD
+
                 currclient.end();
                 resolve(200);
             });
