@@ -46,18 +46,4 @@ public class ArchiveCaseController {
         pageRef.setRedirect(true);
        return pageRef; //Returns to the case page
     }
-
-    //Method that can is called from the Visual Force page action attribute
-    public PageReference restoreCase() {
-       System.debug('Case Owner: ' + owner);
-        System.debug('Case Id: ' + Id);
-        // do some stuff
-        Case curc = [SELECT FIELDS(STANDARD) FROM Case WHERE Id = :Id LIMIT 1];
-        ArchiverCL.backcase(JSON.serialize(curc));
-        String accId = curc.AccountId;
-        //build your code logic here
-       PageReference pageRef = new PageReference('/'+Id);
-        pageRef.setRedirect(true);
-       return pageRef; //Returns to the case page
-    }
 }

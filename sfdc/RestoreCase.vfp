@@ -1,5 +1,0 @@
-<apex:page standardController="Case" extensions="ArchiveCaseController" action="{!restoreCase}">
-<apex:form >
-<apex:inputHidden value="{!case.OwnerId}"/>
-</apex:form>
-</apex:page>
