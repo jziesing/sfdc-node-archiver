@@ -52,7 +52,7 @@ class ApiMethods {
     RestoreCase(req, res) {
         res.setHeader('Content-Type', 'application/json');
 		console.log('TIME TO BackupCase');
-        this.mHelper.ArchiveOrBackupCase(req.body, 'backup')
+        this.mHelper.RestoreCase(req.body)
                   .then(result => {
                         res.sendStatus(200);
                   }).catch(err => {

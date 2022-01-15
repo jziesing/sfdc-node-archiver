@@ -207,7 +207,7 @@ class MethodHelper {
     /*  @route: /api/restore/case/
      *     - POST
      */
-    RestoreCase(reqBodyForm, rec_type) {
+    RestoreCase(reqBodyForm) {
 		// build query string
 		let qrystr = "INSERT INTO sfdc_archive.archived_cases(record_type, ";
 		console.log('RestoreCase');
