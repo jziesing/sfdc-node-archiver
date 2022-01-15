@@ -10,8 +10,9 @@ class MethodHelper {
     constructor() {
 		// methods
         this.ArchiveOrBackupCase = this.ArchiveOrBackupCase.bind(this);
+        this.RestoreCase = this.RestoreCase.bind(this);
     }
-    /*  @route: /api/archive/case/signup
+    /*  @route: /api/archive/case/
      *     - POST
      */
     ArchiveOrBackupCase(reqBodyForm, rec_type) {
@@ -202,6 +203,45 @@ class MethodHelper {
                 resolve(200);
             });
         });
+    }
+    /*  @route: /api/restore/case/
+     *     - POST
+     */
+    RestoreCase(reqBodyForm, rec_type) {
+		// build query string
+		let qrystr = "INSERT INTO sfdc_archive.archived_cases(record_type, ";
+		console.log('RestoreCase');
+		console.log(reqBodyForm);
+		resolve(200);
+		// qrystr = qrystr.substring(0, qrystr.length - 2);
+		// qrystr = qrystr + ")";
+		//
+		// console.log('qryyy strrr');
+		// console.log(qrystr);
+		//
+        // let currclient = new Client({
+        //     connectionString: process.env.DATABASE_URL,
+        //     ssl: {
+        //         rejectUnauthorized: false
+        //       }
+        // });
+		//
+        // return new Promise((resolve, reject) => {
+        //     currclient.connect();
+		//
+        //     console.log('is connectED');
+		//
+        //     currclient.query(qrystr, (err, resp) => {
+        //         if (err){
+        //             console.log('is ERROR');
+        //             console.log(err);
+        //             reject(400);
+        //         }
+        //         console.log(resp);
+        //         currclient.end();
+        //         resolve(200);
+        //     });
+        // });
     }
 }
 

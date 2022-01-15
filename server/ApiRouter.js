@@ -14,6 +14,8 @@ let express = require('express'),
 ApiRouter.post("/api/archive/case/", ApiMethodsRouter.ArchiveCase);
 
 ApiRouter.post("/api/backup/case/", ApiMethodsRouter.BackupCase);
+
+ApiRouter.post("/api/restore/case/", ApiMethodsRouter.RestoreCase);
 /*
  * export
  */
