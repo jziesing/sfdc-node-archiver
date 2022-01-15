@@ -226,22 +226,23 @@ class MethodHelper {
         //       }
         // });
 		//
-        // return new Promise((resolve, reject) => {
-        //     currclient.connect();
-		//
-        //     console.log('is connectED');
-		//
-        //     currclient.query(qrystr, (err, resp) => {
-        //         if (err){
-        //             console.log('is ERROR');
-        //             console.log(err);
-        //             reject(400);
-        //         }
-        //         console.log(resp);
-        //         currclient.end();
-        //         resolve(200);
-        //     });
-        // });
+        return new Promise((resolve, reject) => {
+            // currclient.connect();
+			//
+            // console.log('is connectED');
+			//
+            // currclient.query(qrystr, (err, resp) => {
+            //     if (err){
+            //         console.log('is ERROR');
+            //         console.log(err);
+            //         reject(400);
+            //     }
+            //     console.log(resp);
+            //     currclient.end();
+            //     resolve(200);
+            // });
+			resolve(200);
+        });
     }
 }
 
