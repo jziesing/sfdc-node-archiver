@@ -235,56 +235,59 @@ class MethodHelper {
                     console.log('is ERROR');
                     console.log(err);
                     reject(400);
-                }
-				console.log('succccesss');
-                console.log(resp.rows[0]);
-				let archdCase = resp.rows[0];
-				let qrystr22 = "INSERT INTO salesforce.case(";
-				for (const property in archdCase) {
-  					console.log(`${property}: ${archdCase[property]}`);
-					qrystr22 = qrystr22 + `${property}` + ", ";
-				}
-				qrystr22 = qrystr22.substring(0, qrystr22.length - 2);
-				qrystr22 = qrystr22 + ")VALUES(";
-				for (let key in archdCase) {
-  					console.log(`${key}: ${archdCase[key]}`);
-					if(key != 'id' || key != 'sfid') {
-						if(typeof archdCase[key] != 'number' || typeof archdCase[key] != 'boolean' || typeof archdCase[key] != 'null') {
-							qrystr22 = qrystr22 + "\'" + `${archdCase[key]}` + "\', ";
-						} else {
-							qrystr22 = qrystr22 + `${archdCase[key]}` + ", ";
+                } else {
+					console.log('succccesss');
+	                console.log(resp.rows[0]);
+					let archdCase = resp.rows[0];
+					let qrystr22 = "INSERT INTO salesforce.case(";
+					for (const property in archdCase) {
+	  					console.log(`${property}: ${archdCase[property]}`);
+						qrystr22 = qrystr22 + `${property}` + ", ";
+					}
+					qrystr22 = qrystr22.substring(0, qrystr22.length - 2);
+					qrystr22 = qrystr22 + ")VALUES(";
+					for (let key in archdCase) {
+	  					console.log(`${key}: ${archdCase[key]}`);
+						if(key != 'id' || key != 'sfid') {
+							if(typeof archdCase[key] != 'number' || typeof archdCase[key] != 'boolean' || typeof archdCase[key] != 'null') {
+								qrystr22 = qrystr22 + "\'" + `${archdCase[key]}` + "\', ";
+							} else {
+								qrystr22 = qrystr22 + `${archdCase[key]}` + ", ";
+							}
 						}
-					} 
-				}
+					}
 
-				qrystr22 = qrystr22.substring(0, qrystr22.length - 2) + ");";
-				console.log('qrystr22');
-                console.log(qrystr22);
-				// INSERT BACK INTO case
-				currclient.query(qrystr22, (errr, respp) => {
-					if (errr){
-	                    console.log('is ERROR');
-	                    console.log(err);
-	                    reject(400);
-	                }
-					console.log('succccesss 222');
-	                console.log(respp);
-
-					// DELETE ARCHIVE RECORD
-					let qrystrDel = "DELETE FROM sfdc_archive.archived_cases WHERE id = \'" + pgId + "\';";
-					currclient.query(qrystrDel, (errrr, resppp) => {
-						if (errrr){
+					qrystr22 = qrystr22.substring(0, qrystr22.length - 2) + ");";
+					console.log('qrystr22');
+	                console.log(qrystr22);
+					// INSERT BACK INTO case
+					currclient.query(qrystr22, (errr, respp) => {
+						if (errr){
 		                    console.log('is ERROR');
 		                    console.log(err);
 		                    reject(400);
-		                }
-						console.log('succccesss 33');
-		                console.log(resppp);
+		                } else {
+							console.log('succccesss 222');
+			                console.log(respp);
 
-						currclient.end();
-		                resolve(200);
+							// DELETE ARCHIVE RECORD
+							let qrystrDel = "DELETE FROM sfdc_archive.archived_cases WHERE id = \'" + pgId + "\';";
+							currclient.query(qrystrDel, (errrr, resppp) => {
+								if (errrr){
+				                    console.log('is ERROR');
+				                    console.log(err);
+				                    reject(400);
+				                } else {
+									console.log('succccesss 33');
+					                console.log(resppp);
+
+									currclient.end();
+					                resolve(200);
+								}
+							});
+						}
 					});
-				});
+				}
             });
         });
     }
