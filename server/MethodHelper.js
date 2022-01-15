@@ -241,7 +241,7 @@ class MethodHelper {
 					let archdCase = resp.rows[0];
 					let qrystr22 = "INSERT INTO salesforce.case(";
 					for (let key in archdCase) {
-						if(key != 'id' || key != 'sfid' || key != 'record_type') {
+						if(key != 'id' && key != 'sfid' && key != 'record_type') {
 							console.log(`${key}: ${archdCase[key]}`);
 							qrystr22 = qrystr22 + `${key}` + ", ";
 						}
@@ -250,8 +250,8 @@ class MethodHelper {
 					qrystr22 = qrystr22 + ")VALUES(";
 					for (let key in archdCase) {
 	  					console.log(`${key}: ${archdCase[key]}`);
-						if(key != 'id' || key != 'sfid' || key != 'record_type') {
-							if(typeof archdCase[key] != 'number' || typeof archdCase[key] != 'boolean' || typeof archdCase[key] != 'null') {
+						if(key != 'id' && key != 'sfid' && key != 'record_type') {
+							if(typeof archdCase[key] != 'number' && typeof archdCase[key] != 'boolean' && typeof archdCase[key] != 'null') {
 								qrystr22 = qrystr22 + "\'" + `${archdCase[key]}` + "\', ";
 							} else {
 								qrystr22 = qrystr22 + `${archdCase[key]}` + ", ";
