@@ -275,7 +275,7 @@ class MethodHelper {
 					let archdCase = resp.rows[0];
 					let qrystr22 = "INSERT INTO salesforce.case(";
 					for (let key in archdCase) {
-						if(key != 'id' && key != 'sfid' && key != 'record_type' && key != 'active_case' && archdCase[key] != 'null' && archdCase[key] != null && key != 'createddate' && key != 'systemmodstamp' && key != 'lastmodifieddate' && key != 'lastmodifieddate') {
+						if(key != 'id' && key != 'sfid' && key != 'record_type' && key != 'active_case' && archdCase[key] != 'null' && archdCase[key] != null && key != 'createddate' && key != 'systemmodstamp') {
 							console.log(`${key}: ${archdCase[key]}`);
 							qrystr22 = qrystr22 + `${key}` + ", ";
 						}
@@ -284,7 +284,7 @@ class MethodHelper {
 					qrystr22 = qrystr22 + ")VALUES(";
 					for (let key in archdCase) {
 	  					console.log(`${key}: ${archdCase[key]}`);
-						if(key != 'id' && key != 'sfid' && key != 'record_type' && key != 'active_case' && archdCase[key] != 'null' && archdCase[key] != null && key != 'createddate' && key != 'systemmodstamp' && key != 'lastmodifieddate' && key != 'lastmodifieddate') {
+						if(key != 'id' && key != 'sfid' && key != 'record_type' && key != 'active_case' && archdCase[key] != 'null' && archdCase[key] != null && key != 'createddate' && key != 'systemmodstamp') {
 							if(typeof archdCase[key] != 'number' && typeof archdCase[key] != 'boolean' && typeof archdCase[key] != 'null') {
 								qrystr22 = qrystr22 + "\'" + `${archdCase[key]}` + "\', ";
 							} else {
