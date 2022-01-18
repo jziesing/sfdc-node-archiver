@@ -301,6 +301,7 @@ class MethodHelper {
 						if (errr){
 		                    console.log('is ERROR');
 		                    console.log(err);
+							currclient.end();
 		                    reject(400);
 		                } else {
 							console.log('succccesss 222');
@@ -312,13 +313,27 @@ class MethodHelper {
 								if (errrr){
 				                    console.log('is ERROR');
 				                    console.log(err);
+									currclient.end();
 				                    reject(400);
 				                } else {
 									console.log('succccesss 33');
 					                console.log(resppp.rows[0]);
 
-									currclient.end();
-					                resolve(200);
+									let sqlcaseid = "SELECT * FROM salesforce.case WHERE id=\'" + respp.rows[0].id + "\';";
+									currclient.query(sqlcaseid, (errrro, respppo) => {
+										if (errrro){
+						                    console.log('is ERROR');
+						                    console.log(errrro);
+											currclient.end();
+						                    reject(400);
+						                } else {
+											console.log('succccesss 44');
+							                console.log(respppo.rows[0]);
+
+											currclient.end();
+							                resolve(200);
+										}
+									});
 								}
 							});
 						}
