@@ -239,30 +239,33 @@ class MethodHelper {
      *     - POST
      */
     RestoreCase(reqBodyForm) {
-		// build query string
 
 		console.log('RestoreCase');
-		console.log(reqBodyForm);
+
 		let pgId = reqBodyForm.ExternalId;
+
+		console.log('pgId');
 		console.log(pgId);
+
 		let qrystr = "SELECT * FROM sfdc_archive.archived_cases WHERE id = \'" + pgId + "\';";
 
+		console.log('qrystr');
 		console.log(qrystr);
-		//
+
         let currclient = new Client({
             connectionString: process.env.DATABASE_URL,
             ssl: {
                 rejectUnauthorized: false
               }
         });
-		//
+
         return new Promise((resolve, reject) => {
             currclient.connect();
 
             console.log('is connectED');
-
+			// SELECT archived case
             currclient.query(qrystr, (err, resp) => {
-                if (err){
+                if(err) {
                     console.log('is ERROR');
                     console.log(err);
                     reject(400);
@@ -272,7 +275,7 @@ class MethodHelper {
 					let archdCase = resp.rows[0];
 					let qrystr22 = "INSERT INTO salesforce.case(";
 					for (let key in archdCase) {
-						if(key != 'id' && key != 'sfid' && key != 'record_type' && key != 'active_case' && archdCase[key] != 'null' && archdCase[key] != null) {
+						if(key != 'id' && key != 'sfid' && key != 'record_type' && key != 'active_case' && archdCase[key] != 'null' && archdCase[key] != null && key != 'createddate' && key != 'systemmodstamp' && key != 'lastmodifieddate' && key != 'lastmodifieddate') {
 							console.log(`${key}: ${archdCase[key]}`);
 							qrystr22 = qrystr22 + `${key}` + ", ";
 						}
@@ -281,7 +284,7 @@ class MethodHelper {
 					qrystr22 = qrystr22 + ")VALUES(";
 					for (let key in archdCase) {
 	  					console.log(`${key}: ${archdCase[key]}`);
-						if(key != 'id' && key != 'sfid' && key != 'record_type' && key != 'active_case' && archdCase[key] != 'null' && archdCase[key] != null) {
+						if(key != 'id' && key != 'sfid' && key != 'record_type' && key != 'active_case' && archdCase[key] != 'null' && archdCase[key] != null && key != 'createddate' && key != 'systemmodstamp' && key != 'lastmodifieddate' && key != 'lastmodifieddate') {
 							if(typeof archdCase[key] != 'number' && typeof archdCase[key] != 'boolean' && typeof archdCase[key] != 'null') {
 								qrystr22 = qrystr22 + "\'" + `${archdCase[key]}` + "\', ";
 							} else {
