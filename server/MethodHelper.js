@@ -304,7 +304,7 @@ class MethodHelper {
 		                    reject(400);
 		                } else {
 							console.log('succccesss 222');
-			                console.log(respp);
+			                console.log(respp.rows[0]);
 
 							// DELETE ARCHIVE RECORD
 							let qrystrDel = "DELETE FROM sfdc_archive.archived_cases WHERE id = \'" + pgId + "\';";
@@ -315,7 +315,7 @@ class MethodHelper {
 				                    reject(400);
 				                } else {
 									console.log('succccesss 33');
-					                console.log(resppp);
+					                console.log(resppp.rows[0]);
 
 									currclient.end();
 					                resolve(200);
