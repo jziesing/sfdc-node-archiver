@@ -331,7 +331,7 @@ class MethodHelper {
 							                console.log(respppo.rows[0]);
 
 											currclient.end();
-							                resolve(200);
+							                resolve(respppo.rows[0].casenumber);
 										}
 									});
 								}

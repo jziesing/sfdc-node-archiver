@@ -54,7 +54,7 @@ class ApiMethods {
 		console.log('TIME TO BackupCase');
         this.mHelper.RestoreCase(req.body)
                   .then(result => {
-                        res.sendStatus(200);
+                        res.status(200).send(result);
                   }).catch(err => {
 					  	if(typeof(err) == 'number')
 						  	res.sendStatus(err);
