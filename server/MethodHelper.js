@@ -187,22 +187,53 @@ class MethodHelper {
               }
         });
 
-        return new Promise((resolve, reject) => {
-            currclient.connect();
+		if(rec_type == 'backup') {
+			return new Promise((resolve, reject) => {
 
-            console.log('is connectED');
+	            currclient.connect();
 
-            currclient.query(qrystr, (err, resp) => {
-                if (err){
-                    console.log('is ERROR');
-                    console.log(err);
-                    reject(400);
-                }
-                console.log(resp);
-                currclient.end();
-                resolve(200);
-            });
-        });
+	            console.log('is connectED');
+
+	            currclient.query(qrystr, (err, resp) => {
+	                if (err){
+	                    console.log('is ERROR');
+	                    console.log(err);
+	                    reject(400);
+	                }
+	                console.log(resp);
+	                currclient.end();
+	                resolve(200);
+	            });
+	        });
+		} else {
+			return new Promise((resolve, reject) => {
+
+				let deletbacksql = "DELETE FROM sfdc_archive.archived_cases WHERE sfid=\'" + reqBodyForm.Id + "\';";
+
+	            currclient.connect();
+
+	            console.log('is connectED');
+
+				currclient.query(deletbacksql, (err, resp) => {
+	                if (err){
+	                    console.log('is ERROR');
+	                    console.log(err);
+	                    reject(400);
+	                }
+	                console.log(resp);
+					currclient.query(qrystr, (errr, respp) => {
+		                if (errr){
+		                    console.log('is ERROR');
+		                    console.log(errr);
+		                    reject(400);
+		                }
+		                console.log(respp);
+		                currclient.end();
+		                resolve(200);
+		            });
+	            });
+	        });
+		}
     }
     /*  @route: /api/restore/case/
      *     - POST
