@@ -293,7 +293,7 @@ class MethodHelper {
 						}
 					}
 
-					qrystr22 = qrystr22.substring(0, qrystr22.length - 2) + ");";
+					qrystr22 = qrystr22.substring(0, qrystr22.length - 2) + ") RETURNING *;";
 					console.log('qrystr22');
 	                console.log(qrystr22);
 					// INSERT BACK INTO case
@@ -307,7 +307,7 @@ class MethodHelper {
 			                console.log(respp.rows[0]);
 
 							// DELETE ARCHIVE RECORD
-							let qrystrDel = "DELETE FROM sfdc_archive.archived_cases WHERE id = \'" + pgId + "\';";
+							let qrystrDel = "DELETE FROM sfdc_archive.archived_cases WHERE id = \'" + pgId + "\' RETURNING *;";
 							currclient.query(qrystrDel, (errrr, resppp) => {
 								if (errrr){
 				                    console.log('is ERROR');
