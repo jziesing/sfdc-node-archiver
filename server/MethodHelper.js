@@ -306,6 +306,7 @@ class MethodHelper {
 		                } else {
 							console.log('succccesss 222');
 			                console.log(respp.rows[0]);
+							let accId = respp.rows[0].accountid;
 
 							// DELETE ARCHIVE RECORD
 							let qrystrDel = "DELETE FROM sfdc_archive.archived_cases WHERE id = \'" + pgId + "\' RETURNING *;";
@@ -319,21 +320,8 @@ class MethodHelper {
 									console.log('succccesss 33');
 					                console.log(resppp.rows[0]);
 
-									let sqlcaseid = "SELECT * FROM salesforce.case WHERE id=\'" + respp.rows[0].id + "\';";
-									currclient.query(sqlcaseid, (errrro, respppo) => {
-										if (errrro){
-						                    console.log('is ERROR');
-						                    console.log(errrro);
-											currclient.end();
-						                    reject(400);
-						                } else {
-											console.log('succccesss 44');
-							                console.log(respppo.rows[0]);
-
-											currclient.end();
-							                resolve(respppo.rows[0].accountid);
-										}
-									});
+									currclient.end();
+									resolve(accId);
 								}
 							});
 						}
